@@ -1,4 +1,4 @@
-<img src="https://imgur.com/FanzhiR.png" width="100" hieght="100">
+<img src="https://imgur.com/FanzhiR.png" width="100%" hieght="50%">
 
 # serial-key
 can be used in electronjs as well or even in normal website
