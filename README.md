@@ -1,4 +1,4 @@
-<blockquote class="imgur-embed-pub" lang="en" data-id="FanzhiR"><a href="https://imgur.com/FanzhiR">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src="https://imgur.com/FanzhiR.png" width="100" hieght="100">
 
 # serial-key
 can be used in electronjs as well or even in normal website
