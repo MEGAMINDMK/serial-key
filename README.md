@@ -8,4 +8,7 @@ can be used in electronjs as well or even in normal website
 2. keycheck.html line <a href="https://github.com/MEGAMINDMK/serial-key/blob/0dc4e79917c2b6075f3a15f29aad7853b2cb6a92/keycheck.html#L31">31</a><br>
 3. registerkey.html line <a href="https://github.com/MEGAMINDMK/serial-key/blob/1e546823c71a937e455f2598af1080de5f1c2a43/registerkey.html#L90">90</a><br>
 
-```const CORRECT_KEY = 'AAAA-9999-AAAA-9999';//enter your key here```
+```const CORRECT_KEY = 'AAAA-9999-AAAA-9999';//enter your key here```<br>
+
+Use this (Recommended):<br>
+1.disbaleinspect.js -> Usage:<br>```<script src="disableinspect.js"></script>```<br><a href="https://github.com/MEGAMINDMK/Website-security/blob/main/disbaleinspect.js">disbaleinspect.js</a>
