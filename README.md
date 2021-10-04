@@ -10,7 +10,7 @@ can be used in electronjs as well or even in normal website
 
 ```const CORRECT_KEY = 'AAAA-9999-AAAA-9999';//enter your key here```<br>
 
-Use this (Recommended):
+Use this (Recommended):<br>
 1.<a href="https://github.com/MEGAMINDMK/Website-security/blob/main/disbaleinspect.js">disbaleinspect.js</a> -> Usage: ```<script src="disableinspect.js"></script>```<br>
 2.```<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">```
 
