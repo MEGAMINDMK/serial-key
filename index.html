@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>License Key</title>
+  <link rel="shortcut icon" href="pos/main/images/pos.jpg">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<script src="jquery.min.js"></script>
+  <script src="jquery.inputmask.bundle.js"></script>
+ <style> 
+html,body{
+	font-family:arial;
+	background-color:indigo;
+	color:white;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 97%;
+   background-color: indigo;
+   color: white;
+   text-align: right;
+}
+
+.button {
+  display: block;
+  border: none;
+  background-color: #f2f2f2;
+  padding: 14px 28px;
+  font-size: 15px;
+  cursor: pointer;
+  float: right;
+  border-radius:8px;
+  outline:none;
+}
+.button:hover
+{
+background-color:#e6e6e6;
+}
+
+.button2 {
+  display: block;
+  border: none;
+  background-color: #f2f2f2;
+  padding: 14px 28px;
+  font-size: 15px;
+  cursor: pointer;
+  float: right;
+  border-radius:8px;
+  margin-right:10px;
+  outline:none;
+}
+.button2:hover
+{
+background-color:#e6e6e6;
+}
+
+input[type=text] {
+  width: 30%;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: left;
+font-size:15px; 
+border-radius:25px;
+border:1px solid black;
+outline:none; 
+}
+</style>
+</head>
+<body>
+<div class="error-container">
+<h1></h1></div>
+<center><h1>Software Authentication</h1></center>
+<h2>Product Key</h2>
+<p>It looks similar to this: XXXX-XXXX-XXXX-XXXX</p>
+<input type="text" id="number" data-inputmask="'mask': 'AAAA-9999-AAAA-9999'" placeholder="  Dashes will be added automatically"  name="serial" maxlength = "20" onchange="checkKey(this.value)" required>
+<br><br>
+<span id="error"></span>
+<br><br>
+<p><b>Note:</b> Your product key might have come with an installation DVD, setup or the back of the packet.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Incase if you have lost the product/license/serial key you might have to purchase the <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key from the Software Developer.</p>
+<p><b>Trail:</b> To use the trail version of 30 day's of this software press skip.</p>
+<script>
+$(":input").inputmask();
+   </script>
+<script>
+    const CORRECT_KEY = 'AAAA-9999-AAAA-9999'; //enter your key here
+
+    // To check the key when entered
+    function checkKey(key) {
+        if (key !== CORRECT_KEY) {
+            return console.log('Incorrect License Key');
+        }
+        localStorage.setItem('key', key);
+		setTimeout(function(){ window.location.assign("checked.html"); }, 0);
+    }
+
+    // To check the key when page load
+    if (localStorage.getItem('key') !== null && localStorage.getItem('key') === CORRECT_KEY) {
+        console.log('License Key is Valid');
+		setTimeout(function(){ window.location.assign("checked.html"); }, 0);
+    } else if (localStorage.getItem('key') !== null) {
+		console.log('Previously entered license key is incorrect, please enter it again.');
+    } else {
+       console.log('To continue, please enter your license key');
+    }
+</script>
+<script>
+    function errorMessage() {
+        var error = document.getElementById("error")
+        if (isNaN(document.getElementById("number").value)) 
+        {
+              
+            // Changing content and color of content
+            error.textContent = "This key doesn't work. Try a different key."
+            error.style.color = "white"
+        } else {
+            error.textContent = ""
+        }
+    }
+</script>
+<div class="footer">
+<button type="submit" onclick="errorMessage()" class="button">Next</button>
+<a href="keycheck.html" style="text-decoration:none;" class="button2"><font color="black">Skip</font></a>
+</div>
+<script>
+if (localStorage.getItem("visited") && localStorage.getItem('trialExpire')) {
+	setTimeout(function(){ window.location.assign("checked.html"); }, 0);
+}
+localStorage.setItem("visited", "true");</script>
+
+
+ 
+
+ 
+  

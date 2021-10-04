@@ -1,0 +1,52 @@
+<script> 
+//check if key is present
+const name = localStorage.getItem('key');
+if(name){
+    console.log('key exists');
+	localStorage.removeItem('trialExpire');
+	setTimeout(function(){ window.location.assign('checked.html'); }, 0);
+}
+// if key isnot found the trial version starts
+else{
+    console.log('key is not found');
+	// to check use below line
+	//let now = Math.floor(Date.now() / 1000) + 30 * 24 * 60 * 60;
+let now = Math.floor(Date.now() / 1000);
+if (localStorage.getItem('trialExpire') === null) {
+    localStorage.setItem('trialExpire', now + 30 * 24 * 60 * 60)
+}
+if (now > localStorage.getItem('trialExpire')) {
+   window.location.assign('expired.html');
+} 
+else {
+   alert('You are using an Un-Registered and Un-Licensed version of this software');
+	getConfirmation();
+	function getConfirmation() {		
+               var retVal = confirm('Do you want to continue using unregisterd software?');
+               if( retVal == true ) {
+                window.location.assign('checked.html');
+               } else {
+				 var retVal = window.open('registerkey.html', '_self');
+				   retval.location.assign = 'keycheck.html';
+				   const CORRECT_KEY = 'AAAA-9999-AAAA-9999'; //enter your key here
+				  if (retVal !== CORRECT_KEY) {
+             alert('Incorrect License Key');			
+			getConfirmation();
+        }
+        localStorage.setItem('key', retVal);
+		setTimeout(function(){ window.location.assign('checked.html'); }, 0);
+		
+    // To check the key when page load
+    if (localStorage.getItem('key') !== null && localStorage.getItem('key') === CORRECT_KEY) {
+        alert('License Key is Verified');
+		setTimeout(function(){ window.location.assign('checked.html'); }, 0);
+    } else if (localStorage.getItem('key') !== null) {
+       console.log('Previously entered license key is incorrect, please enter it again.');
+    } else {
+       console.log('To continue, please enter your license key');
+    }
+    }
+    }
+	}
+    }
+</script>
