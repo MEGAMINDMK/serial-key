@@ -1,3 +1,4 @@
+<script src="key.js"></script>
 <script> 
 //check if key is present
 const name = localStorage.getItem('key');
@@ -28,7 +29,7 @@ else {
                } else {
 				 var retVal = window.open('registerkey.html', '_self');
 				   retval.location.assign = 'keycheck.html';
-				   const CORRECT_KEY = 'AAAA-9999-AAAA-9999'; //enter your key here
+				   const CORRECT_KEY = key; //enter your key here
 				  if (retVal !== CORRECT_KEY) {
              alert('Incorrect License Key');			
 			getConfirmation();
